@@ -2,17 +2,21 @@
 Copyright d/Dev 2024...if you are copying this then you are not doing yourself any favors though.
 */
 
-body {
+/* Page body and content */
+body, html {
   background-color: black;
   background-image: url(img/bg-blue-purple-gradient.png);
   background-size: cover;
+  color: whitesmoke;
+  font-family: Arial, Helvetica, sans-serif;
+  height: 100%;
+  width: 100%;
 }
 
-/* Body Text */
-body
-{
-    color: whitesmoke;
-    font-family: Arial, Helvetica, sans-serif;
+/* All */
+* {
+    margin: 0;
+    padding: 0;
 }
 
 /* Links */
@@ -33,6 +37,51 @@ h1
 /* Class for centering elements */
 .center {
     margin: auto;
-    width: 50%;
+    width: 100%;
     padding: 10px;
+}
+
+/* Class for main content table */
+.main-table {
+    width: 66%;
+    margin: auto;
+    align-self: center;
+}
+
+/* Class for header row */
+.header-row {
+    height: 10%;
+}
+
+/* Class for sidebar */
+.sidebar {
+    background: transparent;
+    width: 10%;
+    overflow: auto;
+    height: 80%;
+    float: left;
+    padding: 10px;
+}
+
+/* Class for the main content div */
+.main-content {
+    display: flex;
+    width: 1005;
+    height: 100%;
+}
+
+/* Class for nested iframe page */
+.content-frame {
+    flex-grow: 1;
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Class for footer */
+.footer {
+    height: 10%;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
 }
