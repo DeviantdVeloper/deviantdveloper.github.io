@@ -1,53 +1,8 @@
-<!DOCTYPE html>
-<!--
-Copyright d/Dev 2024.
-...if you are copying this then you are not doing yourself any favors though.
--->
-<html>
-    <head>
-        <a rel="me" href="https://mesmerized.online/@dDev">Mastodon</a>
-        <title>d/Dev </title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="style.css" />
-    </head>
-    <body>
-        <div class="header-row">
-            <h1>d/Dev's work in progress website.</h1>
-        </div>
-        <div class="sidebar">
-            <a href="javascript:ShowHome()">Home</a><br>
-            <br>
-            Projects<br>
-            <p>- <a href='javascript:ShowHypno()'>Hypno.exe</a></p><br>
-            <p>- <a href="javascript:ShowButtplug()">ButtplugUE</a></p><br>
-            <br>
-            Other<br>
-            <p>- <a href='javascript:ShowBlog()'>Blog</a></p><br>
-            <p>- <a href="https://subscribestar.adult/deviant-dveloper" target="_blank">SubscribeStar</a></p><br>
-            <p>- <a href="https://www.patreon.com/DeviantdVeloper" target="_blank">Patreon</a></p><br>
-            <p>- <a href="https://ko-fi.com/deviantdveloper" target="_blank">Ko-Fi</a></p><br>
-        </div>
-        <div class="main-content">
-            <iframe id='content' class='content-frame' src='pages/landing.html'></iframe>
-        </div>
-        <div class='footer'>
-            <div class="center">Copyright d/Dev 2024</div>
-        </div>
-        
-        <script>
-            function ShowHome() {
-                document.getElementById("content").src = "pages/landing.html";
-            }
-            function ShowHypno() {
-                document.getElementById("content").src = "pages/hypno.html";
-            }
-            function ShowButtplug() {
-                document.getElementById("content").src = "pages/buttplugue.html";
-            }
-            function ShowBlog() {
-                document.getElementById("content").src = "pages/blog/blog_index.html";
-            }
-        </script>
-    </body>
-</html>
+---
+layout: default
+---
+<ul>
+	{% for post in site.posts %}
+	<li><a href="{{  post.url }}" title="{{ post.title }}"><img src="/assets/img/file.ico" title="{{ post.title }}" />{{ post.title }}</a></li>
+	{% endfor %}
+</ul>
