@@ -1,17 +1,25 @@
 body {
-	background: #5B149C;
 	font-family: sans-serif, serif, monospace;
 	font-size: 13px;
 	line-height: normal;
+	height: 100%;
+}
+
+html {
+	height: 100%;
+	background-image: linear-gradient(to bottom, #150015, #010001);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: fill;
 }
 
 .wrapper, .content {
 	width: 800px;
 	margin: auto;
 	margin-top: 20px;
-	background: #bfb8bf;
+	background: #3E0051;
 	border: 2px solid;
-	border-color: #fff8ff #000000 #000000 #fff8ff;
+	border-color: #160b1a #0c080e #0c080e #160b1a;
 	padding: 2px 0;
 }
 .default_title, .post_title {
@@ -19,7 +27,7 @@ body {
 	position: relative;
 
 	h1 {
-		color: #bfb8bf;
+		color: #CA20FE;
 		font-size: 14px;
 		font-weight: bold;
 	}
@@ -41,12 +49,12 @@ body {
 	}
 
 	.btn {
-		background: #cccccc;
+		background: #8C01B7;
 		width: 13px;
 		height: 11px;
 		float: right;
 		border: 2px solid;
-		border-color: #fff8ff #000000 #000000 #fff8ff;
+		border-color: #160b1a #0c080e #0c080e #160b1a;
 
 		span {
 			font-size: 11px;
@@ -67,15 +75,18 @@ body {
 	}
 
 	.btn_max {
+		background: #8C01B7;
 		margin: 0 3px 0 0;
 	}
 
 	.btn:active {
+		background: #8C01B7;
 		width: 12px;
 		height: 10px;
 	}
 }
 ul.topbar {
+	color: #ff8eec;
 	list-style: none;
 	padding: 0 10px;
 	margin: 3px 0 3px 0;
@@ -86,14 +97,14 @@ ul.topbar {
 	}
 	a {
 		text-decoration: none;
-		color: #000000;
+		color: #ff8eec;
 	}
 }
 .post_list, .tag_list, .post_content {
-	background: #fff8ff;
+	background: #F5D6FF;
 	border-width: 2px;
 	border-style: ridge groove groove ridge;
-	border-color: #7f787f #fff8ff #fff8ff #7f787f;
+	border-color: #fbf0ff #dec3e7 #dec3e7 #fbf0ff;
 }
 .post_list {
 	width: 70.2%;
@@ -163,7 +174,7 @@ ul.topbar {
     padding:0 0 0 2px;
 }
 #tag-list li a {
-    background: #fff8ff;
+    background: #F5D6FF;
     display:block;
 }
 #tag-list li ul li {
@@ -174,7 +185,7 @@ ul.topbar {
 .post_total {
 	.left, .right {
 		border: 1px solid;
-		border-color: #888888 #dadada #dadada #888888;
+		border-color: #481558 #3c104b #3c104b #481558;
 		display: inline-block;
 		padding: 1px 3px;
 	}
@@ -203,7 +214,7 @@ ul.topbar {
 	}
 
 	a {
-		color: #0000ff;
+		color: #000000;
 		margin-bottom: 15px;
 	}
 
@@ -226,7 +237,7 @@ ul.topbar {
 	blockquote {
 		padding: 0 0 0 15px;
 		margin: 15px 5px;
-		border-left: 8px solid #000000;
+		border-left: 8px solid #32093E;
 	}
 
 	strong {
@@ -234,7 +245,7 @@ ul.topbar {
 	}
 
 	hr {
-		border-top: 3px solid #333333;
+		border-top: 3px solid #32093E;
 		border-left: 0;
 	}
 
@@ -273,7 +284,7 @@ ul.topbar {
 	}
 
 	table, th, td {
-		border: 1px solid #222222;
+		border: 1px solid #32093E;
 		padding: 2px;
 	}
 
@@ -282,7 +293,7 @@ ul.topbar {
 	}
 }
 .hljs {
-	background: #fff8ff;
+	background: #27162C;
 }
 .footer {
 	font-size: 12px;
@@ -290,9 +301,10 @@ ul.topbar {
 
 	p {
 		text-align: center;
+		color: #F5D6FF;
 
 		a {
-			color: #24244a;
+			color: #C91BFE;
 		}
 	}
 }
@@ -399,17 +411,17 @@ ul.topbar {
 } /* the new scrollbar will have a flat appearance with the set background color */
  
 ::-webkit-scrollbar-thumb {
-	background-color: #cccccc;
+	background-color: #9B72BB;
 	border-width: 2px;
 	border-style: groove ridge ridge groove;
-	border-color: #fff8ff #000000 #000000 #fff8ff;
+	border-color: #b586da #8b61ac #806297 #aa8ac4;
 } /* this will style the thumb, ignoring the track */
  
 ::-webkit-scrollbar-button {
-	background-color: #cccccc;
+	background-color: #694188;
 	border-width: 2px;
 	border-style: groove ridge ridge groove;
-	border-color: #fff8ff #000000 #000000 #fff8ff;
+	border-color: #9063b3 #513368 #513368 #9063b3;
 	background-position: center center;
 	background-repeat: no-repeat;
 
@@ -435,5 +447,5 @@ ul.topbar {
 } /* optionally, you can style the top and the bottom buttons (left and right for horizontal bars) */
  
 ::-webkit-scrollbar-corner {
-	background-color: #cacaca;
+	background-color: #9B72BB;
 } /* if both the vertical and the horizontal bars appear, then perhaps the right bottom corner also needs to be styled */
