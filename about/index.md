@@ -1,6 +1,6 @@
 ---
 layout: default
-title: me
+title: About.html
 ---
 
 I am d/Dev, a lewd game dev. A deviant developer, if you will.

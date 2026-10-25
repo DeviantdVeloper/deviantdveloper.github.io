@@ -1,8 +1,10 @@
 ---
 layout: default
 title: Hypno.exe
+short-title: Hypno.exe
 icon: "/assets/img/favicon.ico"
-tags: tag1 tag2 tag3 tag4
+tags: hypno-exe hypnosis
+desc: "A mind-melting audio-visual generator."
 ---
 
 Trololololo

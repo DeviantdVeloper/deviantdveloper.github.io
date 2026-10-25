@@ -1,7 +1,8 @@
 ---
 layout: default
-title: "This is Where it gets Weird"
-tags: tag1 tag2 tag3 tag4 tag5
+title: "Hello World!"
+desc: "Some intro blog post I will change later."
+tags: misc
 ---
 
 ## Lorem Ipsum

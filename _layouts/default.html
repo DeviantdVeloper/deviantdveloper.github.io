@@ -22,7 +22,7 @@
 		{% include topbar.html %}
 		<div class="tag_list">
 			<ul id="tag-list">
-				<li><a href="/" ><img src="/assets/img/disk.png" />(C:)</a>
+				<li><a href="/tags" ><img src="/assets/img/disk.png" />(D:\blog-tags)</a>
 			<ul>
 				{% assign tags = site.tags | sort %}
 				{% for tag in tags %}
@@ -30,17 +30,27 @@
 				{% endfor %}
 			</ul>
 				</li>
+				<li><a href="/projects" ><img src="/assets/img/disk.png" />(D:\projects)</a>
+			<ul>
+				{% assign projects_by_tag = site.projects %}
+				{% for project in projects_by_tag %}
+				<li><a href="{{ project.url }}" title="{{ project.title }}"><img src="{{ project.icon }}" />{{ project.short-title }}</a></li>
+				{% endfor %}
+			</ul>
+				</li>
 			</ul>
 		</div>
 		<div class="post_list">
 			{% unless page.date%}
-				{% if page.title == 'me' or page.title == '404...'%}
+				{% if page.title == 'About.html' or page.collection == 'posts' or page.title == '404...' or page.title == "Tags.html"%}
 					<ul>
 						{% for post in site.posts %}
-						<li><a href="{{  post.url }}" title="{{ post.title }}"><img src="/assets/img/file.ico" title="{{ post.title }}" />{{ post.title }}</a></li>
+							{% if post.hidden != "true" %}
+								<li><a href="{{ post.url }}" title="{{ post.title }}"><img src="/assets/img/file.ico" title="{{ post.title }}" />{{ post.title }}</a></li>
+							{% endif %}
 						{% endfor %}
 					</ul>
-				{% else if page.title == 'projects' or page.title == 'd/Dev.html' %}
+				{% else if page.collection == 'projects' or page.title == 'd/Dev.html'%}
 					<ul>
 						{% for project in site.projects %}
 						<li><a href="{{ project.url }}" title="{{ project.title }}"><img src="{{ project.icon }}" title="{{ project.title }}" />{{ project.title }}</a></li>
@@ -51,10 +61,10 @@
 				{% endif %}
 			{% else %}
 				<ul>
-					{% for post in site.posts %}
-					<li><a href="{{  post.url }}" title="{{ post.title }}"><img src="/assets/img/file.ico" title="{{ post.title }}" />{{ post.title }}</a></li>
-					{% endfor %}
-				</ul>
+						{% for project in site.projects %}
+						<li><a href="{{ project.url }}" title="{{ project.title }}"><img src="{{ project.icon }}" title="{{ project.title }}" />{{ project.title }}</a></li>
+						{% endfor %}
+					</ul>
 			{% endunless %}
 		</div>
 		<div class="post_total">
