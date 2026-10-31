@@ -22,7 +22,7 @@
 		{% include topbar.html %}
 		<div class="tag_list">
 			<ul id="tag-list">
-				<li><a href="/tags" ><img src="/assets/img/disk.png" />(D:\blog-tags)</a>
+				<li><a href="/tags" ><img src="/assets/img/disk.png" />(D:\blog\)</a>
 			<ul>
 				{% assign tags = site.tags | sort %}
 				{% for tag in tags %}
@@ -30,7 +30,7 @@
 				{% endfor %}
 			</ul>
 				</li>
-				<li><a href="/projects" ><img src="/assets/img/disk.png" />(D:\projects)</a>
+				<li><a href="/projects" ><img src="/assets/img/disk.png" />(E:\projects\)</a>
 			<ul>
 				{% assign projects_by_tag = site.projects %}
 				{% for project in projects_by_tag %}
@@ -41,31 +41,30 @@
 			</ul>
 		</div>
 		<div class="post_list">
-			{% unless page.date%}
-				{% if page.title == 'About.html' or page.collection == 'posts' or page.title == '404...' or page.title == "Tags.html"%}
-					<ul>
-						{% for post in site.posts %}
-							{% if post.hidden != "true" %}
-								<li><a href="{{ post.url }}" title="{{ post.title }}"><img src="/assets/img/file.ico" title="{{ post.title }}" />{{ post.title }}</a></li>
-							{% endif %}
-						{% endfor %}
-					</ul>
-				{% else if page.collection == 'projects' or page.title == 'd/Dev.html'%}
-					<ul>
-						{% for project in site.projects %}
-						<li><a href="{{ project.url }}" title="{{ project.title }}"><img src="{{ project.icon }}" title="{{ project.title }}" />{{ project.title }}</a></li>
-						{% endfor %}
-					</ul>
-				{% else %}
-					{{ content }}
-				{% endif %}
-			{% else %}
+			{% if page.title == "About.html" or page.title == "Tags.html" or page.collection == "posts" %}
 				<ul>
-						{% for project in site.projects %}
+					{% for post in site.posts %}
+						{% if post.hidden != "true" %}
+							<li><a href="{{ post.url }}" title="{{ post.title }}"><img src="/assets/img/file.ico" title="{{ post.title }}" />{{ post.title }}</a></li>
+						{% endif %}
+					{% endfor %}
+				</ul>
+			{% endif %}
+			{% if page.title == "Blog.html" or page.title contains "tags::" %}
+				{% assign tags = site.tags | sort %}
+				<ul>
+					{% for tag in tags %}
+						<li><a href="/tag/{{ tag | first | slugify }}/" title="{{ tag[0] | replace:'-', ' ' }}"><img src="/assets/img/folder.ico" />{{ tag[0] | replace:'-', ' ' }}</a></li>
+					{% endfor %}
+				</ul>
+			{% endif %}
+			{% if page.url contains "projects" or page.url contains "main" or page.url contains "links" %}
+				<ul>
+					{% for project in site.projects %}
 						<li><a href="{{ project.url }}" title="{{ project.title }}"><img src="{{ project.icon }}" title="{{ project.title }}" />{{ project.title }}</a></li>
-						{% endfor %}
-					</ul>
-			{% endunless %}
+					{% endfor %}
+				</ul>
+			{% endif %}
 		</div>
 		<div class="post_total">
 			{% if page.tag %}
@@ -86,7 +85,9 @@
 				<div class="btn"><span class="fa fa-window-minimize"></span></div>
 			</div>
 			<ul class="topbar">
-				<li>{{ page.date | date: '%B %-d, %Y' }}</li>
+				{% if page.date %}
+					<li>{{ page.date | date: '%B %-d, %Y' }}</li>
+				{% endif %}
 			</ul>
 			<div class="post_content">
         		{{ content }}
