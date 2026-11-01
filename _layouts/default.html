@@ -16,7 +16,7 @@
 <body>
 	<div class="wrapper">
 		<div class="default_title">
-			<img src="/assets/img/mycomputer.png" />
+			<img src="/assets/img/hypnoexe.ico" />
 			<h1>d/Dev.html</h1>
 		</div>
 		{% include topbar.html %}
@@ -34,14 +34,14 @@
 			<ul>
 				{% assign projects_by_tag = site.projects %}
 				{% for project in projects_by_tag %}
-				<li><a href="{{ project.url }}" title="{{ project.title }}"><img src="{{ project.icon }}" />{{ project.short-title }}</a></li>
+				<li><a href="{{ project.url }}" title="{{ project.title }}"><img src="{{ project.icon }}" width="32" height="32"/>{{ project.short-title }}</a></li>
 				{% endfor %}
 			</ul>
 				</li>
 			</ul>
 		</div>
 		<div class="post_list">
-			{% if page.title == "About.html" or page.title == "Tags.html" or page.collection == "posts" %}
+			{% if page.title == "About.md" or page.title == "Tags.html" or page.collection == "posts" %}
 				<ul>
 					{% for post in site.posts %}
 						{% if post.hidden != "true" %}
@@ -61,7 +61,7 @@
 			{% if page.url contains "projects" or page.url contains "main" or page.url contains "links" %}
 				<ul>
 					{% for project in site.projects %}
-						<li><a href="{{ project.url }}" title="{{ project.title }}"><img src="{{ project.icon }}" title="{{ project.title }}" />{{ project.title }}</a></li>
+						<li><a href="{{ project.url }}" title="{{ project.title }}"><img src="{{ project.icon }}" title="{{ project.title }} width="32" height="32"" />{{ project.title }}</a></li>
 					{% endfor %}
 				</ul>
 			{% endif %}
